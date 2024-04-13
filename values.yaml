@@ -34,7 +34,7 @@ cartsdb:
 
 carts:
     image:
-        repo: wkumararj/sock-shop-micro-services-cart
+        repo: kumararj/sock-shop-micro-services-cart
         tag: latest
     containerPort: 80
     resources:
