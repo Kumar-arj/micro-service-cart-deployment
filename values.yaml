@@ -1,0 +1,46 @@
+# Default values for sock-shop.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+global:
+    registry: ''
+
+java:
+    options: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
+
+istio:
+    enabled: false
+
+ingress:
+    annotations:
+        kubernetes.io/ingress.class: nginx
+    labels: {}
+    host: ''
+    tlsSecretName: ''
+
+cartsdb:
+    image:
+        repo: mongo
+        tag: 4.4.0
+    resources:
+        requests:
+            cpu: 500m
+            memory: 512Mi
+        limits:
+            cpu: 500m
+            memory: 512Mi
+    persistentVolume:
+        storageClass: ''
+        size: 512Mi
+
+carts:
+    image:
+        repo: wkumararj/sock-shop-micro-services-cart
+        tag: latest
+    containerPort: 80
+    resources:
+        limits:
+            cpu: 300m
+            memory: 2000Mi
+        requests:
+            cpu: 300m
+            memory: 2000Mi
