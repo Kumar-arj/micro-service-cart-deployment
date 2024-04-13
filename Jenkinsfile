@@ -27,9 +27,10 @@
                 withCredentials([usernamePassword(credentialsId: 'nexuslogin', usernameVariable: 'username', passwordVariable: 'password')]) {
                       sh '/usr/local/bin/helm repo add sock-shop-helm-local http://nexus.k4m.in/repository/sock-shop-helm-local/ --username $username --password $password'
                       sh "/usr/local/bin/helm repo update"
-                      sh "/usr/local/bin/helm upgrade  --install --force micro-services-admin  --namespace ${env} -f values.yaml eos-helm-local/micro-services-admin"
+                      sh "/usr/local/bin/helm upgrade  --install --force micro-services-cart  --namespace ${env} -f values.yaml sock-shop-helm-local/micro-services-admin"
                       sh "/usr/local/bin/helm list -a --namespace ${env}"
                       sh "rm -rf values.yaml"
+                      
               }
           }
           }
