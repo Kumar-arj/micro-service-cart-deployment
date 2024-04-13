@@ -1,5 +1,5 @@
   def label = "shopagent"
-  def env = "dev"
+  def env = "test"
   podTemplate(label: label, yaml: """
   apiVersion: v1
   kind: Pod
@@ -30,7 +30,7 @@
                       sh "/usr/local/bin/helm upgrade  --install --force micro-services-cart  --namespace ${env} -f values.yaml sock-shop-helm-local/micro-services-admin"
                       sh "/usr/local/bin/helm list -a --namespace ${env}"
                       sh "rm -rf values.yaml"
-                      
+
               }
           }
           }
