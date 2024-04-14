@@ -19,7 +19,7 @@
       node (label) {
 
           stage ('Checkout SCM'){
-            git credentialsId: 'git', url: 'https://gitspace.k4m.in/k4m_admin/eos-admin-deployment.git', branch:  "${env}"
+            git credentialsId: 'git', url: 'https://github.com/Kumar-arj/micro-service-cart-deployment.git', branch:  "${env}"
           }
 
           stage ('Helm Chart') {
