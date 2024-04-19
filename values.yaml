@@ -36,7 +36,7 @@ carts:
     image:
         repo: kumararj/sock-shop-micro-services-cart
         tag: latest
-    containerPort: 8081
+    containerPort: 80
     resources:
         limits:
             cpu: 300m
